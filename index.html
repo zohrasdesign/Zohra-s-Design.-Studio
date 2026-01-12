@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* Reset e geral */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
@@ -17,7 +16,6 @@ body{
   line-height:1.6;
 }
 
-/* Cabeçalho */
 header{
   display:flex;
   justify-content:space-between;
@@ -48,7 +46,6 @@ nav a:hover{color:#5b7cff;}
   vertical-align:middle;
 }
 
-/* Seções */
 section{
   display:none;
   min-height:100vh;
@@ -59,15 +56,21 @@ section.active{display:block;}
 .center{
   max-width:900px;
   margin:auto;
+  text-align:center;
 }
 
-/* Texto da página inicial */
+#home h1{
+  font-size:2.8rem;
+  margin-bottom:30px;
+  color:#1f1f2e;
+}
+
 #home p, #about p{
   margin:30px 0;
   font-size:1.1rem;
+  text-align:left;
 }
 
-/* Grid de projetos */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -84,7 +87,6 @@ section.active{display:block;}
 }
 .grid img:hover{transform:scale(1.05);}
 
-/* Projetos com fundo completo */
 .project{
   min-height:100vh;
   background-size:cover;
@@ -100,7 +102,6 @@ section.active{display:block;}
   border-radius:20px;
 }
 
-/* Botão de voltar */
 .back{
   display:inline-block;
   margin-bottom:20px;
@@ -111,7 +112,6 @@ section.active{display:block;}
   border-radius:12px;
 }
 
-/* Footer com Insta e newsletter */
 footer{
   background:rgba(255,255,255,0.9);
   text-align:center;
@@ -157,7 +157,7 @@ footer button:hover{background:#3a5edc;}
 <body>
 
 <header>
-  <img src="images/logo1.png" alt="Logo">
+  <img src="images/logo1.png" alt="Zohra’s Design Logo">
   <nav>
     <a onclick="show('home')">Home</a>
     <a onclick="show('projects')">Projects</a>
@@ -173,6 +173,7 @@ footer button:hover{background:#3a5edc;}
 <!-- Página Inicial -->
 <section id="home" class="active">
   <div class="center">
+    <h1>Zohra’s Design</h1>
     <p>At Zohra’s Design, I believe that organization shouldn’t be complicated or stressful. That’s why I created simple, clean, beautiful, and practical digital planners and trackers designed to help you take control of your day and your goals—without overwhelm.</p>
     <p>My products are made with care for people who want to stay positive but don’t have time for complicated systems. Whether you’re just starting your planning journey or looking for easy tools to keep you on track, I’m here to help you make every day count.</p>
     <p>Thank you for trusting Zohra’s Design to be part of your organization journey!</p>
@@ -185,7 +186,7 @@ footer button:hover{background:#3a5edc;}
     <h1>Projects</h1>
     <div class="grid">
       <img src="images/project-1.png" onclick="show('p1')">
-      <img src="images/project-2.jpeg" onclick="show('p2')">
+      <img src="images/project-2.png" onclick="show('p2')">
       <img src="images/project-3.jpeg" onclick="show('p3')">
       <img src="images/project-4.jpeg" onclick="show('p4')">
     </div>
@@ -198,7 +199,7 @@ footer button:hover{background:#3a5edc;}
   <h1>Project One</h1>
 </section>
 
-<section id="p2" class="project" style="background-image:url('images/project-2.jpeg')">
+<section id="p2" class="project" style="background-image:url('images/project-2.png')">
   <span class="back" onclick="show('projects')">← Back</span>
   <h1>Project Two</h1>
 </section>
@@ -262,3 +263,4 @@ function show(id){
 
 </body>
 </html>
+
