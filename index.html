@@ -5,97 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zohra’s Design</title>
 <link rel="icon" href="images/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* Reset e geral */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(#cfe9ff,#ffd6e8);
+  background:linear-gradient(to bottom, #cfe9ff, #ffd6e8);
   color:#1f1f2e;
+  line-height:1.6;
 }
 
+/* Cabeçalho */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 20px;
-  background:rgba(255,255,255,0.6);
+  padding:15px 25px;
+  background:rgba(255,255,255,0.8);
   backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
-header img{height:40px;}
+header img{height:45px;}
 
 nav a{
-  margin-left:15px;
+  margin-left:20px;
   font-weight:600;
   cursor:pointer;
+  text-decoration:none;
+  color:#1f1f2e;
+  transition:color 0.3s;
+}
+nav a:hover{color:#5b7cff;}
+
+.shop-icon{
+  height:30px;
+  cursor:pointer;
+  vertical-align:middle;
 }
 
+/* Seções */
 section{
   display:none;
   min-height:100vh;
+  padding:50px 20px;
 }
-
 section.active{display:block;}
 
 .center{
   max-width:900px;
   margin:auto;
-  padding:40px 20px;
 }
 
-.instagram{
-  text-align:center;
-  margin-bottom:25px;
-}
-.instagram a{
-  margin:0 10px;
-  color:#5b7cff;
-  font-weight:600;
+/* Texto da página inicial */
+#home p{
+  margin:30px 0;
+  font-size:1.1rem;
 }
 
-.shop-icon{
-  display:block;
-  margin:20px auto;
-  width:50px;
-  cursor:pointer;
-}
-
+/* Grid de projetos */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
 .grid img{
   width:100%;
-  height:200px;
+  height:250px;
   object-fit:cover;
   border-radius:20px;
   cursor:pointer;
+  transition:transform 0.3s;
 }
+.grid img:hover{transform:scale(1.05);}
 
+/* Projetos com fundo completo */
 .project{
   min-height:100vh;
   background-size:cover;
   background-position:center;
-  padding:30px;
+  padding:50px 30px;
+  color:#fff;
+  text-shadow:0 0 10px rgba(0,0,0,0.5);
 }
-
 .project h1{
-  background:rgba(255,255,255,0.7);
+  background:rgba(0,0,0,0.5);
   display:inline-block;
-  padding:10px 18px;
+  padding:15px 25px;
   border-radius:20px;
 }
 
+/* Botão de voltar */
 .back{
-  display:block;
-  margin-bottom:15px;
+  display:inline-block;
+  margin-bottom:20px;
   font-weight:600;
   cursor:pointer;
+  background:rgba(0,0,0,0.5);
+  padding:8px 15px;
+  border-radius:12px;
 }
+
+/* Footer com Insta e newsletter */
+footer{
+  background:rgba(255,255,255,0.9);
+  text-align:center;
+  padding:40px 20px;
+  margin-top:50px;
+  border-top:1px solid #ccc;
+}
+
+footer h2{margin-bottom:20px;}
+
+footer .instagram a{
+  margin:0 15px;
+  font-weight:600;
+  color:#5b7cff;
+  text-decoration:none;
+}
+
+footer .newsletter{
+  margin-top:25px;
+}
+footer input[type=email]{
+  padding:10px 15px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  width:250px;
+  max-width:80%;
+}
+footer button{
+  padding:10px 20px;
+  border:none;
+  background:#5b7cff;
+  color:#fff;
+  font-weight:600;
+  border-radius:12px;
+  cursor:pointer;
+  margin-left:10px;
+  transition:background 0.3s;
+}
+footer button:hover{background:#3a5edc;}
 </style>
 </head>
 
@@ -107,81 +162,93 @@ section.active{display:block;}
     <a onclick="show('home')">Home</a>
     <a onclick="show('projects')">Projects</a>
     <a onclick="show('about')">About</a>
+    <a onclick="show('blog')">Blog</a>
     <a onclick="show('contact')">Contact</a>
     <a href="https://payhip.com/ZohrasDesign" target="_blank">
-      <img src="images/icon.jpg" style="height:28px;">
+      <img src="images/icon.jpg" class="shop-icon" alt="Shop">
     </a>
   </nav>
 </header>
 
+<!-- Página Inicial -->
 <section id="home" class="active">
   <div class="center">
-    <div class="instagram">
-      <a href="https://www.instagram.com/zohrasdesign?igsh=MzZkbHJyZ3M0d2lj" target="_blank">@instagram1</a>
-      <a href="Estou no Instagram como @studio.zohrasdesign. Descarrega a app e segue-me https://www.instagram.com/studio.zohrasdesign" target="_blank">@instagram2</a>
-    </div>
-
-    <img src="images/icon.jpg" class="shop-icon"
-     onclick="window.open('https://payhip.com/ZohrasDesign','_blank')">
-
-    <p>
-      At Zohra´s Design, I believe that organization shouldn´t be complicated or stressfull. That´s why I created simple, clean,
-      beautifull and practical digital planners and trackers designed to help you take control of your day and your goals-without overwhelm.
-      My products are made with care for people who want to stay positive but don´t have time for complicated systems.
-      Whether you´re just starting your planning journey or looking for easy tools to keep you on track, I´m here to help you make everyday count.
-        
-        Thank you for trusting Zohra´s Design to be part of your organization journey!
-
-
-    </p>
+    <p>At Zohra’s Design, I believe that organization shouldn’t be complicated or stressful. That’s why I created simple, clean, beautiful, and practical digital planners and trackers designed to help you take control of your day and your goals—without overwhelm.</p>
+    <p>My products are made with care for people who want to stay positive but don’t have time for complicated systems. Whether you’re just starting your planning journey or looking for easy tools to keep you on track, I’m here to help you make every day count.</p>
+    <p>Thank you for trusting Zohra’s Design to be part of your organization journey!</p>
   </div>
 </section>
 
+<!-- Projetos -->
 <section id="projects">
   <div class="center">
     <h1>Projects</h1>
     <div class="grid">
       <img src="images/project-1.png" onclick="show('p1')">
-      <img src="images/project-2.png" onclick="show('p2')">
+      <img src="images/project-2.jpeg" onclick="show('p2')">
       <img src="images/project-3.jpeg" onclick="show('p3')">
       <img src="images/project-4.jpeg" onclick="show('p4')">
     </div>
   </div>
 </section>
 
+<!-- Projetos com fundo completo -->
 <section id="p1" class="project" style="background-image:url('images/project-1.png')">
-  <span class="back" onclick="show('projects')">← back</span>
+  <span class="back" onclick="show('projects')">← Back</span>
   <h1>Project One</h1>
 </section>
 
 <section id="p2" class="project" style="background-image:url('images/project-2.jpeg')">
-  <span class="back" onclick="show('projects')">← back</span>
+  <span class="back" onclick="show('projects')">← Back</span>
   <h1>Project Two</h1>
 </section>
 
 <section id="p3" class="project" style="background-image:url('images/project-3.jpeg')">
-  <span class="back" onclick="show('projects')">← back</span>
+  <span class="back" onclick="show('projects')">← Back</span>
   <h1>Project Three</h1>
 </section>
 
 <section id="p4" class="project" style="background-image:url('images/project-4.jpeg')">
-  <span class="back" onclick="show('projects')">← back</span>
+  <span class="back" onclick="show('projects')">← Back</span>
   <h1>Project Four</h1>
 </section>
 
+<!-- About -->
 <section id="about">
   <div class="center">
     <h1>About</h1>
-    <p>Design minimal, intencionally, professional and peacefull.</p>
+    <p>Minimal, intentional, professional, and calming design solutions to make your planning effortless and joyful.</p>
   </div>
 </section>
 
+<!-- Blog -->
+<section id="blog">
+  <div class="center">
+    <h1>Blog</h1>
+    <p>Coming soon: Tips, advice, and insights to help you stay organized and productive every day.</p>
+  </div>
+</section>
+
+<!-- Contact -->
 <section id="contact">
   <div class="center">
     <h1>Contact</h1>
     <p>fatimaechcharrat27@gmail.com</p>
   </div>
 </section>
+
+<!-- Footer -->
+<footer>
+  <h2>Follow & Subscribe</h2>
+  <div class="instagram">
+    <a href="https://www.instagram.com/zohrasdesign" target="_blank">@zohrasdesign</a>
+    <a href="https://www.instagram.com/studio.zohrasdesign" target="_blank">@studio.zohrasdesign</a>
+  </div>
+  <div class="newsletter">
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+</footer>
 
 <script>
 function show(id){
@@ -193,3 +260,7 @@ function show(id){
 
 </body>
 </html>
+
+
+
+
