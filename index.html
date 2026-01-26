@@ -1,303 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zohra’s Design</title>
-<link rel="icon" href="images/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Zohra´s Design</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(to bottom, #cfe9ff, #ffd6e8);
-  color:#1f1f2e;
-  line-height:1.6;
-}
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f7f7f7;
+      color:#222;
+    }
 
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 25px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(8px);
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
+    header{
+      padding:40px 20px 20px;
+      text-align:center;
+    }
 
-header img{height:45px;}
+    header h1{
+      margin:0;
+      font-size:2.5rem;
+      letter-spacing:1px;
+    }
 
-nav a{
-  margin-left:20px;
-  font-weight:600;
-  cursor:pointer;
-  text-decoration:none;
-  color:#1f1f2e;
-  transition:color 0.3s;
-}
-nav a:hover{color:#5b7cff;}
+    header p{
+      max-width:600px;
+      margin:20px auto 0;
+      line-height:1.6;
+    }
 
-.shop-icon{
-  height:30px;
-  cursor:pointer;
-  vertical-align:middle;
-}
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:20px;
+    }
 
-section{
-  display:none;
-  min-height:100vh;
-  padding:50px 20px;
-}
-section.active{display:block;}
+    nav a{
+      text-decoration:none;
+      color:#222;
+      font-weight:bold;
+    }
 
-.center{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
+    section{
+      padding:60px 20px;
+    }
 
-#home h1{
-  font-size:2.8rem;
-  margin-bottom:30px;
-  color:#1f1f2e;
-}
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      max-width:1100px;
+      margin:0 auto;
+    }
 
-#home p, #about p{
-  margin:30px 0;
-  font-size:1.1rem;
-  text-align:left;
-}
+    .project{
+      height:300px;
+      background-size:cover;
+      background-position:center;
+      border-radius:8px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.grid img{
-  width:100%;
-  height:250px;
-  object-fit:cover;
-  border-radius:20px;
-  cursor:pointer;
-  transition:transform 0.3s;
-}
-.grid img:hover{transform:scale(1.05);}
-
-.project{
-  min-height:100vh;
-  background-size:cover;
-  background-position:center;
-  padding:50px 30px;
-  color:#fff;
-  text-shadow:0 0 10px rgba(0,0,0,0.5);
-}
-.project h1{
-  background:rgba(0,0,0,0.5);
-  display:inline-block;
-  padding:15px 25px;
-  border-radius:20px;
-}
-
-.back{
-  display:inline-block;
-  margin-bottom:20px;
-  font-weight:600;
-  cursor:pointer;
-  background:rgba(0,0,0,0.5);
-  padding:8px 15px;
-  border-radius:12px;
-}
-
-footer{
-  background:rgba(255,255,255,0.9);
-  text-align:center;
-  padding:40px 20px;
-  margin-top:50px;
-  border-top:1px solid #ccc;
-}
-
-footer h2{margin-bottom:20px;}
-
-footer .instagram a{
-  margin:0 15px;
-  font-weight:600;
-  color:#5b7cff;
-  text-decoration:none;
-}
-
-footer .newsletter{
-  margin-top:25px;
-}
-footer input[type=email]{
-  padding:10px 15px;
-  border-radius:12px;
-  border:1px solid #ccc;
-  width:250px;
-  max-width:80%;
-}
-footer button{
-  padding:10px 20px;
-  border:none;
-  background:#5b7cff;
-  color:#fff;
-  font-weight:600;
-  border-radius:12px;
-  cursor:pointer;
-  margin-left:10px;
-  transition:background 0.3s;
-}
-footer button:hover{background:#3a5edc;}
-</style>
+    footer{
+      text-align:center;
+      padding:30px 20px;
+      font-size:0.9rem;
+      color:#666;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-  <img src="images/logo1.png" alt="Zohra’s Design Logo">
+  <h1>Zohra´s Design</h1>
+  <p>
+    Design minimalista inspirado em equilíbrio, intenção e beleza intemporal.
+  </p>
+
   <nav>
-    <a onclick="show('home')">Home</a>
-    <a onclick="show('projects')">Projects</a>
-    <a onclick="show('about')">About</a>
-    <a onclick="show('blog')">Blog</a>
-    <a onclick="show('contact')">Contact</a>
-    <a href="https://payhip.com/ZohrasDesign" target="_blank">
-      <img src="images/icon.jpg" class="shop-icon" alt="Shop">
-    </a>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
   </nav>
 </header>
 
-<!-- Página Inicial -->
-<section id="home" class="active">
-  <div class="center">
-    <h1>Zohra’s Design</h1>
-    <p>At Zohra’s Design, I believe that organization shouldn’t be complicated or stressful. That’s why I created simple, clean, beautiful, and practical digital planners and trackers designed to help you take control of your day and your goals—without overwhelm.</p>
-    <p>My products are made with care for people who want to stay positive but don’t have time for complicated systems. Whether you’re just starting your planning journey or looking for easy tools to keep you on track, I’m here to help you make every day count.</p>
-    <p>Thank you for trusting Zohra’s Design to be part of your organization journey!</p>
+<section id="home">
+  <p style="text-align:center; max-width:600px; margin:0 auto;">
+    Bem-vindo ao meu espaço criativo. Aqui exploro forma, silêncio visual e identidade através do design.
+  </p>
+</section>
+
+<section id="shop">
+  <div class="projects">
+
+    <div class="project" style="background-image:url('images file/project-1.png')"></div>
+
+    <div class="project" style="background-image:url('images file/project-2.jpeg')"></div>
+
+    <div class="project" style="background-image:url('images file/project-3.jpeg')"></div>
+
+    <div class="project" style="background-image:url('images file/project-4.jpeg')"></div>
+
   </div>
 </section>
 
-<!-- Projetos -->
-<section id="projects">
-  <div class="center">
-    <h1>Projects</h1>
-    <div class="grid">
-      <img src="images/project-1.png" onclick="show('p1')">
-      <img src="images/project-2.jpeg" onclick="show('p2')">
-      <img src="images/project-3.jpeg" onclick="show('p3')">
-      <img src="images/project-4.jpeg" onclick="show('p4')">
-    </div>
-  </div>
-</section>
-
-<!-- Projetos com fundo completo -->
-<section id="p1" class="project" style="background-image:url('images/project-1.png')">
-  <span class="back" onclick="show('projects')">← Back</span>
-  <h1>Project One</h1>
-</section>
-
-<section id="p2" class="project" style="background-image:url('images/project-2.jpeg')">
-  <span class="back" onclick="show('projects')">← Back</span>
-  <h1>Project Two</h1>
-</section>
-
-<section id="p3" class="project" style="background-image:url('images/project-3.jpeg')">
-  <span class="back" onclick="show('projects')">← Back</span>
-  <h1>Project Three</h1>
-</section>
-
-  <span class="back" onclick="show('projects')">← Back</span>
-  <h1>Project Four</h1>
-</section>
-<section id="p3" class="project" style="background-image:url('images/project-4.jpeg')">
-<!-- About -->
 <section id="about">
-  <div class="center">
-    <h1>About</h1>
-    <p>At Zohra’s Design, I believe that organization shouldn’t be complicated or stressful. That’s why I created simple, clean, beautiful, and practical digital planners and trackers designed to help you take control of your day and your goals—without overwhelm.</p>
-    <p>My products are made with care for people who want to stay positive but don’t have time for complicated systems. Whether you’re just starting your planning journey or looking for easy tools to keep you on track, I’m here to help you make every day count.</p>
-    <p>Thank you for trusting Zohra’s Design to be part of your organization journey!</p>
-  </div>
+  <p style="text-align:center; max-width:600px; margin:0 auto;">
+    Sou Zohra, criadora focada em design visual simples e funcional. Cada projeto nasce da procura por harmonia entre forma e significado.
+  </p>
 </section>
 
-<!-- Blog -->
-<section id="blog">
-  <div class="center">
-    <h1>Blog</h1>
-    <p>You Don’t Need a Perfect Planner — You Need a Daily Reset
-zohrasdesign.  
-      <p>January 08, 2026
-Sometimes things start going badly, everything feels confusing, and nothing goes as planned. Then we we procrastinate and postpone things, thinking::
-<p>Next week I’ll start again on Monday.
-<p>Next month, definitely.
-<p>Next year, maybe.
-<p>BUT you don´t need to be perfect or wait for the right moment. You can restart now, right now. Every moment is a chance to start, you don´t need to be perfect. We are not robots- we are human. It´s okay to fail, and it´s okay start slowly.
-
-
-<p>That´s why I creates this -because of the struggles that all of as sometimes go through, I created for me, for you to.
-
-
-<p>A reset that we all deserve.
-
-
-<p>Chek this link:https://payhip.com/b/GXV9N
-
-
-<p>Take a breath agian and start getting out of the overhelming bublle of procastination.
-
-
-
-<p>This is something to help you to get up and prioritize what´s important in your life, taking small steps.
-
-
-
-<p>A reset of everything - you can use it multiple times for every area of your life!
-
-
-<p>Progress doesn’t come from forcing yourself.
-
-
-
-<p>It comes from returning to yourself — again and again.
-
-
-
-<p>And a daily reset can be that return 🤍.
-  </div>
-</section>
-<section id="p3" class="project" style="background-image:url('images/project-4.jpeg')">
-<!-- Contact -->
-<section id="contact">
-  <div class="center">
-    <h1>Contact</h1>
-    <p>fatimaechcharrat27@gmail.com</p>
-  </div>
-</section>
-
-<!-- Footer -->
 <footer>
-  <h2>Follow & Subscribe</h2>
-  <div class="instagram">
-    <a href="https://www.instagram.com/zohrasdesign" target="_blank">@zohrasdesign</a>
-    <a href="https://www.instagram.com/studio.zohrasdesign" target="_blank">@studio.zohrasdesign</a>
-  </div>
-  <div class="newsletter">
-    <input type="email" placeholder="Enter your email">
-    <button>Subscribe</button>
-  </div>
+  © 2026 Zohra´s Design
 </footer>
-
-<script>
-function show(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0,0);
-}
-</script>
 
 </body>
 </html>
-
