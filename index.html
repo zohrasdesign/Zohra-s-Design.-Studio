@@ -1,236 +1,226 @@
-<!-- INDEX.HTML -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zohra’s Design - Minimal Digital Planners</title>
-<meta name="description" content="Explore Zohra's Design, creating minimal and practical digital planners that help you stay focused, motivated, and at peace with your daily routine.">
+<title>Zohra’s Design</title>
+
 <link rel="icon" href="images file/logo1.png">
+
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,#dbe9ff,#eadbff);color:#2b2b3c;scroll-behavior:smooth;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;}
-header img{height:50px;cursor:pointer;}
-nav img{height:26px;margin-left:18px;cursor:pointer;transition:transform 0.3s;}
-nav img:hover{transform:scale(1.1);}
-.center{max-width:1000px;margin:auto;padding:60px 25px;}
-.home-title{font-size:34px;font-weight:700;margin-bottom:25px;}
-.home-text{line-height:1.8;margin-bottom:60px;max-width:700px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:25px;}
-.grid img{width:100%;height:220px;object-fit:cover;border-radius:22px;cursor:pointer;transition:transform 0.3s;}
-.grid img:hover{transform:scale(1.05);}
-.social{margin-top:80px;display:flex;align-items:center;gap:20px;}
-.social img{height:30px;cursor:pointer;transition:transform 0.3s;}
-.social img:hover{transform:scale(1.1);}
+
+body{
+  font-family:'Montserrat', sans-serif;
+  background:linear-gradient(180deg,#dbe9ff,#eadbff);
+  color:#2b2b3c;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 30px;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+header img{
+  height:50px;
+}
+
+nav img{
+  height:26px;
+  margin-left:18px;
+  cursor:pointer;
+}
+
+/* SECTIONS */
+section{
+  display:none;
+  min-height:100vh;
+}
+
+section.active{
+  display:block;
+}
+
+.center{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 25px;
+}
+
+/* HOME */
+.home-title{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.home-text{
+  line-height:1.8;
+  margin-bottom:60px;
+  max-width:700px;
+}
+
+/* PROJECT GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:22px;
+  cursor:pointer;
+  transition:transform 0.3s;
+}
+
+.grid img:hover{
+  transform:scale(1.03);
+}
+
+/* PROJECT PAGE */
+.project{
+  background-size:cover;
+  background-position:center;
+  padding:60px 25px;
+}
+
+.project-box{
+  background:rgba(255,255,255,0.8);
+  padding:30px;
+  border-radius:25px;
+  max-width:600px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:20px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* SOCIAL */
+.social{
+  margin-top:80px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.social img{
+  height:30px;
+  cursor:pointer;
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <img src="images file/logo1.png" alt="Zohra's Design Logo" onclick="window.location.href='index.html'">
+  <img src="images file/logo1.png" alt="Zohra's Design">
+
   <nav>
-    <img src="images file/shop-icon.png" alt="Shop" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
+    <img src="images file/icon.jpg" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
   </nav>
 </header>
-<section id="home">
+
+<!-- HOME -->
+<section id="home" class="active">
   <div class="center">
     <h1 class="home-title">Zohra’s Design</h1>
+
     <p class="home-text">
-      At Zohra’s Design, I believe that organization should feel calm, simple and beautiful.
-      I create minimal and practical digital planners designed to help you stay focused,
-      motivated and at peace with your daily routine.
+      At Zohra’s Design, I believe that organization should feel calm, simple and beautiful. 
+      I create minimal and practical digital planners designed to help you stay focused, motivated and at peace with your daily routine.
       <br><br>
       Everything is created with care, for people who want clarity without complexity.
     </p>
+
     <div class="grid">
-      <a href="p1.html"><img src="images file/project-1.png" alt="Project One"></a>
-      <a href="p2.html"><img src="images file/project-2.jpeg" alt="Project Two"></a>
-      <a href="p3.html"><img src="images file/project-3.jpeg" alt="Project Three"></a>
-      <a href="p4.html"><img src="images file/project-4.jpeg" alt="Project Four"></a>
+      <img src="images file/project-1.png" onclick="show('p1')">
+      <img src="images file/project-2.jpeg" onclick="show('p2')">
+      <img src="images file/project-3.jpeg" onclick="show('p3')">
+      <img src="images file/project-4.jpeg" onclick="show('p4')">
     </div>
+
     <div class="social">
-      <img src="images file/10462345.png" alt="Instagram" onclick="window.open('https://www.instagram.com/studio.zohrasdesign','_blank')">
-      <img src="images file/1464230.png" alt="TikTok" onclick="window.open('https://www.tiktok.com/@zohras.design.stu?_r=1&_t=ZG-93OIP1WK0m1','_blank')">
+      <img src="images file/10462345.png" onclick="window.open('https://www.instagram.com/studio.zohrasdesign','_blank')">
+      <img src="images file/10464230.png" onclick="window.open('https://www.tiktok.com/@zohrasdesign.stu?_r=1&_t=ZG-93OIP1WKom1','_blank')">
     </div>
   </div>
 </section>
-</body>
-</html>
 
-
-<!-- P1.HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project One - Zohra’s Design</title>
-<meta name="description" content="Project One by Zohra’s Design: Clean digital planning with soft aesthetic. Detailed insights and tips.">
-<link rel="icon" href="images file/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,#dbe9ff,#eadbff);color:#2b2b3c;scroll-behavior:smooth;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;}
-header img{height:50px;cursor:pointer;}
-nav img{height:26px;margin-left:18px;cursor:pointer;transition:transform 0.3s;}
-nav img:hover{transform:scale(1.1);}
-.project-top{height:50vh;background-image:url('images file/project-1.png');background-size:cover;background-position:center;background-attachment:fixed;}
-.project-box{background:rgba(255,255,255,0.9);padding:30px;border-radius:25px;max-width:800px;margin:-60px auto 60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-.back{display:inline-block;margin-bottom:20px;font-weight:600;cursor:pointer;}
-.blog-content{line-height:1.8;margin-top:20px;}
-</style>
-</head>
-<body>
-<header>
-  <img src="images file/logo1.png" alt="Zohra's Design Logo" onclick="window.location.href='index.html'">
-  <nav>
-    <img src="images file/shop-icon.png" alt="Shop" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
-  </nav>
-</header>
-<div class="project-top"></div>
-<div class="project-box">
-  <span class="back" onclick="window.location.href='index.html'">← Back to Home</span>
-  <h1>Project One</h1>
-  <div class="blog-content">
-    <p>This project focuses on clean digital planning with a soft aesthetic.</p>
-    <p>Here you can add detailed blog-style content, step-by-step insights, process images, and tips related to Project One.</p>
-    <img src="images file/shop-icon.png" alt="Shop" style="height:30px;cursor:pointer;" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
+<!-- PROJECTS -->
+<section id="p1" class="project" style="background-image:url('images file/project-1.png')">
+  <div class="project-box">
+    <span class="back" onclick="show('home')">← Back</span>
+    <h1>Project One-SIMPLE WEEK TASK TRACKER</h1>
+    <p>This Simple Weekly Task Tracker is a basic and easy-to-use tool designed to help you organize your tasks for the week in a clear and simple way.
+It´s not a full planner and it doesn´t include complex systems.
+It´s made for people who just want to see their week clearly and keep track of tasks without feeling overwhelmed.</p>
+    <br>
+    <img src="images file/icon.jpg" onclick="window.open('https://payhip.com/b/ORrAS','_blank')" style="height:30px;cursor:pointer;">
   </div>
-</div>
-</body>
-</html>
+</section>
 
-
-<!-- P2.HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Two - Zohra’s Design</title>
-<meta name="description" content="Project Two by Zohra’s Design: Calm and structured planner for everyday balance. Detailed insights and tips.">
-<link rel="icon" href="images file/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,#dbe9ff,#eadbff);color:#2b2b3c;scroll-behavior:smooth;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;}
-header img{height:50px;cursor:pointer;}
-nav img{height:26px;margin-left:18px;cursor:pointer;transition:transform 0.3s;}
-nav img:hover{transform:scale(1.1);}
-.project-top{height:50vh;background-image:url('images file/project-2.jpeg');background-size:cover;background-position:center;background-attachment:fixed;}
-.project-box{background:rgba(255,255,255,0.9);padding:30px;border-radius:25px;max-width:800px;margin:-60px auto 60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-.back{display:inline-block;margin-bottom:20px;font-weight:600;cursor:pointer;}
-.blog-content{line-height:1.8;margin-top:20px;}
-</style>
-</head>
-<body>
-<header>
-  <img src="images file/logo1.png" alt="Zohra's Design Logo" onclick="window.location.href='index.html'">
-  <nav>
-    <img src="images file/shop-icon.png" alt="Shop" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
-  </nav>
-</header>
-<div class="project-top"></div>
-<div class="project-box">
-  <span class="back" onclick="window.location.href='index.html'">← Back to Home</span>
-  <h1>Project Two</h1>
-  <div class="blog-content">
-    <p>A calm and structured planner for everyday balance.</p>
-    <p>Use this space to write detailed explanations, behind-the-scenes info, or tips related to Project Two.</p>
-    <img src="images file/shop-icon.png" alt="Shop" style="height:30px;cursor:pointer;" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
+<section id="p2" class="project" style="background-image:url('images file/project-2.jpeg')">
+  <div class="project-box">
+    <span class="back" onclick="show('home')">← Back</span>
+    <h1>Project Two-A Super Planner 2026</h1>
+    <p>You want to have succes this year don´t think twice with this planner you will be able to organize your goals, your days, your weeks, your moths, everything for this new year that come. 
+      And finally have a year more productive, more organize and less stress, that everyone feels that but with this planner you will finally have THE YEAR you are looking for, starting TODAY because every DAY is THE DAY!.</p>
+    <br>
+    <img src="images file/icon.jpg" onclick="window.open('https://payhip.com/b/OjYE4','_blank')" style="height:30px;cursor:pointer;">
   </div>
-</div>
-</body>
-</html>
+</section>
 
-
-<!-- P3.HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Three - Zohra’s Design</title>
-<meta name="description" content="Project Three by Zohra’s Design: Designed for clarity, intention and focus. Detailed blog-style insights and tips.">
-<link rel="icon" href="images file/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,#dbe9ff,#eadbff);color:#2b2b3c;scroll-behavior:smooth;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;}
-header img{height:50px;cursor:pointer;}
-nav img{height:26px;margin-left:18px;cursor:pointer;transition:transform 0.3s;}
-nav img:hover{transform:scale(1.1);}
-.project-top{height:50vh;background-image:url('images file/project-3.jpeg');background-size:cover;background-position:center;background-attachment:fixed;}
-.project-box{background:rgba(255,255,255,0.9);padding:30px;border-radius:25px;max-width:800px;margin:-60px auto 60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-.back{display:inline-block;margin-bottom:20px;font-weight:600;cursor:pointer;}
-.blog-content{line-height:1.8;margin-top:20px;}
-</style>
-</head>
-<body>
-<header>
-  <img src="images file/logo1.png" alt="Zohra's Design Logo" onclick="window.location.href='index.html'">
-  <nav>
-    <img src="images file/shop-icon.png" alt="Shop" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
-  </nav>
-</header>
-<div class="project-top"></div>
-<div class="project-box">
-  <span class="back" onclick="window.location.href='index.html'">← Back to Home</span>
-  <h1>Project Three</h1>
-  <div class="blog-content">
-    <p>Designed for clarity, intention and focus.</p>
-    <p>Add here detailed blog-style content, insights, images, and process tips related to Project Three.</p>
-    <img src="images file/shop-icon.png" alt="Shop" style="height:30px;cursor:pointer;" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
+<section id="p3" class="project" style="background-image:url('images file/project-3.jpeg')">
+  <div class="project-box">
+    <span class="back" onclick="show('home')">← Back</span>
+    <h1>Project Three-A Caml Focus Planner</h1>
+    <p>You are looking for a less stress and complicated planner for this year here´s big but pratical, clean and minimal way to start this year.
+    this is for you!!!</p>
+    <br>
+    <img src="images file/icon.jpg" onclick="window.open('https://payhip.com/b/J5q36','_blank')" style="height:30px;cursor:pointer;">
   </div>
-</div>
-</body>
-</html>
+</section>
 
-
-<!-- P4.HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Four - Zohra’s Design</title>
-<meta name="description" content="Project Four by Zohra’s Design: Soft colors and structured layouts for mindful planning. Detailed insights and tips.">
-<link rel="icon" href="images file/logo1.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Montserrat',sans-serif;background:linear-gradient(180deg,#dbe9ff,#eadbff);color:#2b2b3c;scroll-behavior:smooth;}
-header{display:flex;justify-content:space-between;align-items:center;padding:20px 30px;background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;}
-header img{height:50px;cursor:pointer;}
-nav img{height:26px;margin-left:18px;cursor:pointer;transition:transform 0.3s;}
-nav img:hover{transform:scale(1.1);}
-.project-top{height:50vh;background-image:url('images file/project-4.jpeg');background-size:cover;background-position:center;background-attachment:fixed;}
-.project-box{background:rgba(255,255,255,0.9);padding:30px;border-radius:25px;max-width:800px;margin:-60px auto 60px auto;box-shadow:0 8px 20px rgba(0,0,0,0.1);}
-.back{display:inline-block;margin-bottom:20px;font-weight:600;cursor:pointer;}
-.blog-content{line-height:1.8;margin-top:20px;}
-</style>
-</head>
-<body>
-<header>
-  <img src="images file/logo1.png" alt="Zohra's Design Logo" onclick="window.location.href='index.html'">
-  <nav>
-    <img src="images file/shop-icon.png" alt="Shop" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
-  </nav>
-</header>
-<div class="project-top"></div>
-<div class="project-box">
-  <span class="back" onclick="window.location.href='index.html'">← Back to Home</span>
-  <h1>Project Four</h1>
-  <div class="blog-content">
-    <p>Soft colors and structured layouts for mindful planning.</p>
-    <p>Add detailed blog-style content, images, process tips, and insights related to Project Four.</p>
-    <img src="images file/shop-icon.png" alt="Shop" style="height:30px;cursor:pointer;" onclick="window.open('https://shop.zohrasdesign.com','_blank')">
+<section id="p4" class="project" style="background-image:url('images file/project-4.jpeg')">
+  <div class="project-box">
+    <span class="back" onclick="show('home')">← Back</span>
+    <h1>Project Four-The Daily Reset</h1>
+    <p>You feel overhelmed and procastinate here´s something that I usually use to reset everthing when I have so much to do but I dont know what to do, or where to start.
+      If you feel that to check this:
+You have a lot of tasks and don´t know where to start but if you buy this digital product you will be able to reorganize yourself and start slow without stressing so much.
+If you use this you will improve yourself. have more productivity and stress relief.
+If you buy this you will be able to use it digitilaty without wasting time building yourself.
+</p>
+    <br>
+    <img src="images file/icon.jpg" onclick="window.open('https://payhip.com/b/GXV9N','_blank')" style="height:30px;cursor:pointer;">
   </div>
-</div>
+</section>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+
 </body>
 </html>
 
